@@ -401,7 +401,7 @@ button {
 #copyright {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 20px 0px 50px 0px;
     font-size: 12px;
     text-align: center;
 
