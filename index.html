@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/calculator.css">
+    <title>은퇴 자산 계산기</title>
+</head>
+<body>
+    <section id="contents">
+        <div class="wrapper">
+            <div class="title">
+                <div class="main_title">
+                    <h1>나 얼마 있으면,<br>일 안하고 살 수 있을까?</h1>
+                    <div class="bubble">
+                        <p>💰</p>
+                    </div>
+                    <div class="bubble2">
+                        <p>💸</p>
+                    </div>
+                </div>
+                <div class="sub_title">- 은퇴 자금 계산기 -</div>
+            </div>
+            <div class="intro">
+                <p>
+                    누구나 부자가 되어 경제적 자유를 얻고 싶어합니다. <br>
+                    그런데, 얼마의 돈이 있어야 부자가 되고, 자유를 누릴 수 있을까요?<br>
+                    각자에게 맞는 기준을 한번 계산해봅시다!
+                </p>
+            </div>
+            <div class="input">
+                <div class="monthly_input">
+                    <div class="category_title">
+                        <h3>[월 필요 금액]</h3>
+                    </div>
+                    <div class="monthly_living_expenses fields">
+                        <label for="living_expenses">생활비</label>
+                            <input id="living_expenses" type="number" value="200">
+                            <p>만원</p>
+                    </div>
+                    <div class="monthly_housing_expenses fields">
+                        <label for="housing_expenses">주거비</label>
+                        <input id="housing_expenses" type="number" value="70">
+                        <p>만원</p>
+                    </div>
+                    <div class="monthly_extra_expenses fields">
+                        <label for="monthly_extra">기타</label>
+                        <input id="monthly_extra" type="number" value="15">
+                        <p>만원</p>
+                        <!-- <span class="uh">저축하는 비용 제외하고, 소비하는 비용만</span> -->
+                    </div>
+                </div>
+                <div class="annual_input">
+                    <div class="category_title">
+                        <h3>[연간 필요 금액]</h3>
+                    </div>
+                    <div class="annual_travel_expenses fields">
+                        <label for="travel_expenses">여행비</label>
+                        <input id="travel_expenses" type="number" value="300">
+                        <p>만원</p>
+                    </div>
+                    <div class="annual_extra_expenses fields">
+                        <label for="annual_extra">기타</label>
+                        <input id="annual_extra" type="number" value="30">
+                        <p>만원</p>
+                        <!-- <span class="uh">연간 나눠 내는 비용</span> -->
+                    </div>
+                </div>
+            </div>
+            <div class="next">
+                <div class="next_wrap">
+                    <button class="next_btn">나는 1년에 얼마가 필요할까?</button>
+                </div>
+            </div>
+            <div class="loading">
+                <div class="loading_wrap">
+                    <img src="img/loading-icon.png" alt="로딩 중" width="60px">
+                </div>
+            </div>
+            <div class="first_result">
+                <div class="result_wrap">
+                    <div class="result-lineheight"><span>당신은 1년간 </span><span class="annual_expense_result"></span><span>이 필요합니다.</span></div>
+                    <div><span>이 삶을 유지하기 위해서는, 매월</span><span class="monthly_expense_result"></span><span>의 수입을 만들어야 합니다.</span></div>
+                </div>
+                <div class="interest_input">
+                    <div class="category_title">
+                        <h3>[내가 만들 수 있는 연평균 수익율]</h3>
+                    </div>
+                    <div class="intro">
+                        일을 하지 않고 먹고 살기 위해서는<br>
+                        은퇴 자금의 이자에서 월 수입을 벌어들여야 합니다.<br>
+                        스스로 만들어낼 수 있는 수익율은 얼마인가요?
+                    </div>
+                    <div class="interest fields">
+                        <label for="interest_rate">연평균 수익율</label>
+                        <input id="interest_rate" type="number" step="0.1" value="1.7">
+                        <p>%</p>
+                    </div>
+                    <div class="comment">
+                        참고로 2021년 은행 평균 적금 이자율은 1.7% 입니다.
+                    </div>
+                </div>
+            </div>
+            <div class="calculate">
+                <div class="calculator_wrap">
+                    <button class="calculator">은퇴 자금 계산하기!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="modal">
+        <div class="modal_wrap">
+            <div class="summary">
+                <p>연평균 <span class="interest_value"></span>%의 수익율로</p>
+                <p>매월 <span class="monthly_expense_value"></span>을 벌기 위한</p>
+            </div>
+            <div class="equity_result">
+                <p>당신의 은퇴 자금은.. </p>
+                <p><span class="equity_value"></span>입니다!</p>
+            </div>
+            <div class="comment">
+                <p>평생 일해도 못 모을 금액이 나왔나요?<br>
+                그럼 매월 필요 금액을 조정해보거나,<br>
+                수익율을 조정해보세요.!</p>
+            </div>
+            <div class="close">
+                <button class="close_btn">다시 계산해보기</button>
+            </div>
+        </div>
+    </section>
+    <section id="dummy">
+        <span class="annual_expense_value"></span>
+    </section>
+    <section id="copyright">
+        <p>
+            ※ 피드백은 언제나 환영입니다. <br>
+            onsoo.jeong@gmail.com
+        </p>
+    </section>
+    <script type="text/javascript" src="js/calculator.js"></script>
+</body>
+</html>
